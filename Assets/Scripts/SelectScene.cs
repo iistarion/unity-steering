@@ -7,18 +7,11 @@ using UnityEngine.SceneManagement;
 public class SelectScene : MonoBehaviour
 {
     [SerializeField]
+    private ScenesDescription _sceneDescriptions;
+    [SerializeField]
     private TMP_Text _sceneDescription;
     private string _currentScene;
     private TMP_Dropdown _sceneDropdown;
-
-    private Dictionary<string, string> _sceneDescriptions = new Dictionary<string, string>
-    {
-        { "Seek", "Demonstrates how boids can seek a target." },
-        { "Arrive", "Shows how boids can arrive at a target." },
-        { "Flee", "Demonstrates how boids can flee from a target." },
-        { "Evade", "Shows how boids can evade a target." },
-        { "Pursue", "Demonstrates how boids can pursue a target." },
-    };
 
     private void Awake()
     {
@@ -48,7 +41,7 @@ public class SelectScene : MonoBehaviour
         var dropdownScene = _sceneDropdown.options[_sceneDropdown.value].text;
         SceneManager.LoadScene(dropdownScene, LoadSceneMode.Additive);
         _currentScene = dropdownScene;
-        _sceneDescription.SetText(_sceneDescriptions[_currentScene]);
+        _sceneDescription.SetText(_sceneDescriptions.SceneDescriptions[_currentScene]);
     }
 
     private void UnloadScene(string sceneName)

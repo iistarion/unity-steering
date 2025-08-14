@@ -837,6 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393a6e1c04a8fa94abd5511a5a45eae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneDescriptions: {fileID: 11400000, guid: 61145a31235b5d34aa2175912fc9a47a, type: 2}
   _sceneDescription: {fileID: 739487223}
 --- !u!1 &739487221
 GameObject:
@@ -1059,7 +1060,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 200, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006330634
 MonoBehaviour:
@@ -1655,7 +1656,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 200, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350212997
 MonoBehaviour:
@@ -2191,10 +2192,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Green capsule: boids, will seek, arrive, flee, pursue evade targets.
+  m_text: 'The <color="red">red sphere<color=#ffffff> is the target of the <color=#000000>seek<color=#ffffff>
+    and <color=#000000>arrive<color=#ffffff> behaviours.You can drag&drop it to move
+    it.
 
-    Red
-    sphere: target boids interacts with. You can drag and drop it to move it.'
+
+    The <color="green">green capsules<color=#ffffff> will seek or arrive
+    to the <color="red">target<color=#fff>.
+
+
+    The <color="blue">blue capsules<color=#fff>
+    will <color=#000>evade,. pursue or flee <color=#fff>from the <color="green">green
+    capsules<color=#fff>.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
