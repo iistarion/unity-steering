@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 2019552355}
   - component: {fileID: 2019552354}
   - component: {fileID: 2019552353}
+  - component: {fileID: 2019552358}
   m_Layer: 0
   m_Name: Boid (Arrive)
   m_TagString: Untagged
@@ -326,7 +327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationOffset: {x: 90, y: 0, z: 0}
   Target: {fileID: 1680833676}
-  Radius: 1
+  ArrivalRadius: 2
+  StopRadius: 0.1
 --- !u!114 &2019552354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,9 +343,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
   Acceleration: {x: 0, y: 0, z: 0}
-  Mass: 1
-  MaxSpeed: 7
-  MaxForce: 0.4
+  Mass: 0.2
+  MaxSpeed: 9
+  MaxForce: 16
 --- !u!136 &2019552355
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -420,6 +422,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019552351}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2019552358
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019552351}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 104
+  m_CollisionDetection: 0
 --- !u!1 &2072793671
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +461,7 @@ GameObject:
   - component: {fileID: 2072793675}
   - component: {fileID: 2072793674}
   - component: {fileID: 2072793673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prediction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +498,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -542,6 +571,7 @@ GameObject:
   - component: {fileID: 2079399682}
   - component: {fileID: 2079399681}
   - component: {fileID: 2079399685}
+  - component: {fileID: 2079399686}
   m_Layer: 0
   m_Name: Boid (Pursue)
   m_TagString: Untagged
@@ -579,9 +609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
   Acceleration: {x: 0, y: 0, z: 0}
-  Mass: 1
-  MaxSpeed: 7
-  MaxForce: 0.4
+  Mass: 0.2
+  MaxSpeed: 9
+  MaxForce: 16
 --- !u!136 &2079399682
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -674,6 +704,34 @@ MonoBehaviour:
   Target: {fileID: 2019552354}
   DebugInterception: {fileID: 2072793671}
   _showDebugInterception: 1
+  _timeInAdvance: 0.2
+--- !u!54 &2079399686
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079399678}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 104
+  m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

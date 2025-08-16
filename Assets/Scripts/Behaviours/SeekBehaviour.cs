@@ -30,7 +30,7 @@ public class SeekBehaviour : MonoBehaviour, ISteeringBehaviour
         steering = Vector3.ClampMagnitude(steering, boid.MaxForce);
         steering /= boid.Mass;
 
-        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering, boid.MaxSpeed);
+        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.deltaTime, boid.MaxSpeed);
         boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
 
         boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);

@@ -30,12 +30,9 @@ public class FleeBehaviour : MonoBehaviour, ISteeringBehaviour
         steering = Vector3.ClampMagnitude(steering, boid.MaxForce);
         steering /= boid.Mass;
 
-        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering, boid.MaxSpeed);
+        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.deltaTime, boid.MaxSpeed);
         boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
         
-        // Force z axis to 0 to keep the boid on a 2D plane
-        boid.transform.position = new Vector3(boid.transform.position.x, boid.transform.position.y, 0);
-
         boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
     }
 }

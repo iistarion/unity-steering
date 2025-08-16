@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 1235281421}
   - component: {fileID: 1235281425}
   - component: {fileID: 1235281426}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Boid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,9 +647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
   Acceleration: {x: 0, y: 0, z: 0}
-  Mass: 1
-  MaxSpeed: 5
-  MaxForce: 0.1
+  Mass: 0.2
+  MaxSpeed: 9
+  MaxForce: 16
 --- !u!136 &1235281422
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 104
   m_CollisionDetection: 0
 --- !u!1 &1273127144
 GameObject:
