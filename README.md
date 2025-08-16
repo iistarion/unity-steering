@@ -158,12 +158,11 @@ See the [open issues](https://github.com/iistarion/unity-steering/issues) for a 
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Bug / Feature Requests
 
-This repo is **stable** and not accepting pull requests.
 
-- 🐞 Report bugs or broken samples → open an **Issue**.
-- 💡 Propose enhancements or Unity-version updates → open an **Issue** (use the template).
+- 🐞 Report bugs or broken samples → open a **Bug report**.
+- 💡 Propose enhancements or Unity-version updates → open an **Feature request**.
 - 🔀 Want to change code? Please **fork** the repo and maintain your fork.
 
 Thanks for understanding!
