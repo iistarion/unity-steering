@@ -22,14 +22,12 @@
 <h3 align="center">Unity Steering Behaviours</h3>
 
   <p align="center">
-    Simple Unity project with steering behaviours implemented in C#.
+    Simple Unity project with 5 steering behaviours.
     <br />
     <br />
-    <a href="https://github.com/iistarion/unity-steering">View Demo</a>
+    <a href="https://github.com/iistarion/unity-steering/issues/new?labels=bug&template=bug_report.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/iistarion/unity-steering/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    &middot;
-    <a href="https://github.com/iistarion/unity-steering/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/iistarion/unity-steering/issues/new?labels=enhancement&template=feature_request.md">Request Feature</a>
   </p>
 </div>
 
@@ -68,12 +66,16 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-In this project, we have implemented several steering behaviours in Unity using C#, including:
+This project is a simple Unity project that demonstrates how to implement **steering behaviours** in C#. You can use it as a reference for your own projects or as a learning resource. The behaviours implemented are:
 - Seek
 - Arrive
 - Flee
 - Pursue
 - Evade
+
+Bear in mind this **doesn't make use of the Unity Physics**, except for collision detection and correction, so it is not a recommended solution for steering behaviours in Unity. It is meant to be a simple and easy-to-understand implementation of steering behaviours.
+
+It also uses an **Euler integration** method to update the position and rotation of the agents, which is not the most accurate method, but it is simple and easy to understand.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,16 +111,7 @@ Unity 6.0 LTS installed on your computer.
 2. Open the Project
    - Open Unity Hub and click on "Add" to add the cloned project.
    - Select the folder where you cloned the repo.
-3. Open the "START_HERE" scene
-   - In the Project window, navigate to `Assets/Scenes/`.
-   - Double-click on `START_HERE.unity` to open the scene.
-   - Press "Play" in Unity to start the project.
-4. In order to edit a specific behaviour, you can open the corresponding *scene:
-   - In the Project window, navigate to `Assets/Scenes/`.
-   - Pick any behaviour scene you want to edit (e.g., `Seek.unity`, `Arrive.unity`, etc.) and drag and drop it into the Hierarchy window. This way we'll have both scenes open.
 
-
-***Note:** The behaviour scenes are pretty plain and don't include a camera, so its better to open 2 scenes: the "START_HERE" one and the scene for the behaviour we want to edit. If we dont do that, the behaviour scenes will be missing camera and other components, which will make it difficult to see the behaviour in action.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -126,9 +119,25 @@ Unity 6.0 LTS installed on your computer.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Open the "START_HERE" scene:
+   - In the Project window, navigate to `Assets/Scenes/`.
+   - Double-click on `START_HERE.unity` to open the scene.
+   - Press "Play" in Unity to start the project.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+When the project is running, you'll be able to select the behaviour you want to test from the dropdown menu in the top left corner of the screen. The available behaviours are:
+  - Seek: The agent will move towards a target position.
+  - Arrive: The agent will slow down as it approaches a target position.
+  - Flee: The agent will move away from a target position.
+  - Pursue: The agent will predict the future position of a moving target and move towards it.
+  - Evade: The agent will predict the future position of a moving target and move away from it.
+
+
+The different behaviours are implemented in separate scenes, so you can easily test and modify them independently. To edit a specific behaviour, you can open the corresponding scene:
+   - In the Project window, navigate to `Assets/Scenes/`.
+   - Pick any behaviour scene you want to edit (e.g., `Seek.unity`, `Arrive.unity`, etc.) and drag and drop it into the Hierarchy window (or the View Window). This way we'll have both scenes open.
+
+> [!NOTE]
+> The behaviour scenes don't include a camera, so bear in mind to always have the START_HERE scene open. Otherwise, they won't have a camera, and the Game Window will be empty.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,5 +204,5 @@ Project Link: [https://github.com/iistarion/unity-steering](https://github.com/i
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/carlos-yaque-b8a97a9
 [product-screenshot]: images/screenshot.png
-[Unity]: https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white
+[Unity]: https://img.shields.io/badge/Unity%206.0%20LTS-000000?style=for-the-badge&logo=unity&logoColor=white
 [Unity-url]: https://unity.com/
