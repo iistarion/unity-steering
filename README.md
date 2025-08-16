@@ -163,9 +163,9 @@ See the [open issues](https://github.com/iistarion/unity-steering/issues) for a 
 
 - 🐞 Report bugs or broken samples → open a **Bug report**.
 - 💡 Propose enhancements or Unity-version updates → open an **Feature request**.
-- 🔀 Want to change code? Please **fork** the repo and maintain your fork.
+- 🔀 If you’d like to extend it, feel free to create a **personal fork**.
 
-Thanks for understanding!
+Thanks!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
