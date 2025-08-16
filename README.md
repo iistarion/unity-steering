@@ -183,7 +183,7 @@ Distributed under the MIT license.
 <!-- CONTACT -->
 ## Contact
 
-Carlos Yaque - https://www.carlos-yaque.com
+Carlos Yaque: https://www.carlos-yaque.com
 
 Project Link: [https://github.com/iistarion/unity-steering](https://github.com/iistarion/unity-steering)
 
