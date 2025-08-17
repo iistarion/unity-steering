@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Behaviours\SeekBehaviour.cs" />
     <Compile Include="Assets\Scripts\Boid.cs" />
     <Compile Include="Assets\Scripts\SelectScene.cs" />
+    <Compile Include="Assets\BoidPropertiesHelper.cs" />
     <Compile Include="Assets\Scripts\ScenesDescription.cs" />
     <Compile Include="Assets\Scripts\Behaviours\FleeBehaviour.cs" />
   </ItemGroup>

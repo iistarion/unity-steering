@@ -12,6 +12,7 @@ public class SelectScene : MonoBehaviour
     private TMP_Text _sceneDescription;
     private string _currentScene;
     private TMP_Dropdown _sceneDropdown;
+    private BoidPropertiesHelper _boidProperties;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class SelectScene : MonoBehaviour
             if (scene.name != "START_HERE")
                 UnloadScene(scene.name);
         }
+        _boidProperties = FindObjectsByType<BoidPropertiesHelper>(FindObjectsSortMode.None).FirstOrDefault();
     }
 
     private void Start()
@@ -42,6 +44,8 @@ public class SelectScene : MonoBehaviour
         SceneManager.LoadScene(dropdownScene, LoadSceneMode.Additive);
         _currentScene = dropdownScene;
         _sceneDescription.SetText(_sceneDescriptions.SceneDescriptions[_currentScene]);
+        if (_boidProperties != null)
+            _boidProperties.StartCoroutine("DelayApplyCurrentValues");
     }
 
     private void UnloadScene(string sceneName)
