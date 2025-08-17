@@ -3936,18 +3936,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color="red">Red sphere:<color=#ffffff> target of the <color=#000000>seek<color=#ffffff>
-    and <color=#000000>arrive<color=#ffffff> behaviours.You can drag&drop it to move
-    it.
+  m_text: '<color="red">Red sphere:<color=#ffffff> target of the <color=#000000>seek/arrive<color=#ffffff>
+    behaviours.You can move them around by drag&drop.
 
 
-    <color="green">Green capsule:<color=#ffffff> agent that seeks/arrives
-    at the <color="red">red sphere<color=#fff>.
+    <color="green">Green
+    capsule:<color=#ffffff> agent that seeks/arrives at the <color="red">red spheres<color=#fff>.
 
 
-    <color="blue">Blue capsule:<color=#fff>
-    agent that <color=#000>evade/pursue/flee<color=#fff> from the <color="green">green
-    capsules<color=#fff>.'
+    <color="blue">Blue
+    capsule:<color=#fff> agent that <color=#000>evades/pursues/flees<color=#fff>
+    from the <color="green">green capsules<color=#fff>.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
