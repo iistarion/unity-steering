@@ -21,7 +21,7 @@ public class SeekBehaviour : MonoBehaviour, ISteeringBehaviour
     {
         // Velocity to go to the target
         var desiredVelocity = (Target.position - boid.transform.position).normalized;
-        desiredVelocity *= boid.MaxSpeed;
+        desiredVelocity *= boid.MaxVelocity;
 
         // Velocity to smoothly steer towards the target
         var steering = desiredVelocity - boid.Velocity;
@@ -30,7 +30,7 @@ public class SeekBehaviour : MonoBehaviour, ISteeringBehaviour
         steering = Vector3.ClampMagnitude(steering, boid.MaxForce);
         steering /= boid.Mass;
 
-        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.deltaTime, boid.MaxSpeed);
+        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.deltaTime, boid.MaxVelocity);
         boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
 
         boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);

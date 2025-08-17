@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: -1427
-    y: 121
+    x: -1430
+    y: 129
     width: 1419
     height: 1221
   m_ShowMode: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     width: 1718
     height: 1341
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 124
+  controlID: 37
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 125
+  controlID: 38
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 50
+  controlID: 39
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 51
+  controlID: 40
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -1139,9 +1139,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.12591593, y: 0.030348737, z: -0.00385395, w: -0.99157465}
   m_Size:
-    m_Target: 13.906027
+    m_Target: 37.32526
     speed: 2
-    m_Value: 13.906027
+    m_Value: 37.32526
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1386,7 +1386,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 02e4ffffe4ad00003eae0000
+      m_ExpandedIDs: 68dffeff2a09ffff0029ffffa446ffff3a79ffff4e79ffffac7effff7689ffffce9bffff18abffff58c0ffff5ac0ffff5cc0ffff86c6ffff82d6ffff30dfffff5ce4ffffc8eeffffaeefffff4ef3ffff8eab0000b6ab0000b4ae00000eaf00008eaf00007ab20000d4b20000a4b700004cb8000068b80000c6b8000064c10000bec1000096c30000f0c3000008c80000a4ca0000c0ca000000cd00001ecd00001aea00000af60000e40301007c180100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1458,7 +1458,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Scripts/Behaviours
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1468,16 +1468,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Scripts/Behaviours
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\projects\Unity\unity-steering
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 42a90000
-    m_LastClickedID: 43330
-    m_ExpandedIDs: 00000000b6a80000
+    m_SelectedIDs: 40cd0000
+    m_LastClickedID: 52544
+    m_ExpandedIDs: 00000000e8a80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1506,7 +1506,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b6a80000
+    m_ExpandedIDs: 00000000e8a80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1638,7 +1638,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 43072
+  m_LastSelectedObjectID: 52514
 --- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52

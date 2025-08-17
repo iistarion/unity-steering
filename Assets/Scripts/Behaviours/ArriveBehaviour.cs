@@ -26,16 +26,16 @@ public class ArriveBehaviour : MonoBehaviour, ISteeringBehaviour
         var desiredVelocity = (Target.position - boid.transform.position);
         var distance = desiredVelocity.magnitude;
 
-        float targetSpeed = boid.MaxSpeed * Mathf.Clamp01(distance / ArrivalRadius);
+        float targetSpeed = boid.MaxVelocity * Mathf.Clamp01(distance / ArrivalRadius);
         if (distance > ArrivalRadius)
         {
             // If the target is far away, go at max speed
-            desiredVelocity = desiredVelocity.normalized * boid.MaxSpeed;
+            desiredVelocity = desiredVelocity.normalized * boid.MaxVelocity;
         }
         else if (distance > StopRadius)
         {
             // If the target is close, slow down
-            desiredVelocity = desiredVelocity.normalized * (boid.MaxSpeed * (distance / ArrivalRadius));
+            desiredVelocity = desiredVelocity.normalized * (boid.MaxVelocity * (distance / ArrivalRadius));
         }
         else
         {
@@ -51,7 +51,7 @@ public class ArriveBehaviour : MonoBehaviour, ISteeringBehaviour
         steering = Vector3.ClampMagnitude(steering, boid.MaxForce);
         steering /= boid.Mass;
 
-        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.fixedDeltaTime, boid.MaxSpeed);
+        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.fixedDeltaTime, boid.MaxVelocity);
         boid.transform.position += boid.Velocity * Time.fixedDeltaTime;
 
         boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);

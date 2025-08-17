@@ -28,12 +28,12 @@ public class EvadeBehaviour : MonoBehaviour, ISteeringBehaviour
     {
         var futurePosition = Target.transform.position + Target.Velocity * _timeInAdvance;
         var desiredVelocity = (boid.transform.position - futurePosition).normalized;
-        desiredVelocity *= boid.MaxSpeed;
+        desiredVelocity *= boid.MaxVelocity;
         var steering = desiredVelocity - boid.Velocity;
         steering = Vector3.ClampMagnitude(steering, boid.MaxForce);
         steering /= boid.Mass;
 
-        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.deltaTime, boid.MaxSpeed);
+        boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.deltaTime, boid.MaxVelocity);
         boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
 
         boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
