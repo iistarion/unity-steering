@@ -3,18 +3,32 @@
 public class Boid : MonoBehaviour
 {
     public Vector3 Velocity;
-    public Vector3 Acceleration;
+    public bool ShowForces;
     public float Mass;
     public float MaxVelocity = 5f;
     public float MaxForce = 0.1f;
+    private LineRenderer _lineRenderer;
 
-    private void OnDrawGizmos()
+    private void Awake()
     {
-        // Draw a line representing the velocity vector
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + Velocity);
-        // Draw a sphere at the position of the boid
-        //Gizmos.color = Color.blue;
-        //Gizmos.DrawSphere(transform.position, 0.1f);
+        _lineRenderer = GetComponent<LineRenderer>();
+        if (_lineRenderer == null)
+        {
+            _lineRenderer = gameObject.AddComponent<LineRenderer>();
+        }
+        _lineRenderer.startWidth = 0.1f;
+        _lineRenderer.endWidth = 0.1f;
+        _lineRenderer.positionCount = 2;
+        Velocity = Vector3.zero;
+    }
+
+    private void Update()
+    {
+        if (ShowForces)
+        {
+            _lineRenderer.startColor = _lineRenderer.endColor = Color.green;
+            _lineRenderer.SetPosition(0, transform.position);
+            _lineRenderer.SetPosition(1, transform.position + Velocity);
+        }
     }
 }

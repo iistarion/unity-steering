@@ -57,6 +57,12 @@ public class BoidPropertiesHelper : MonoBehaviour
             text.SetText(MassText, value);
     }
 
+    public void ShowForces(bool value)
+    {
+        foreach (var boid in GetAllBoids())
+            boid.ShowForces = value;
+    }
+
     public IEnumerator DelayApplyCurrentValues()
     {
         yield return new WaitForSeconds(0.1f);
@@ -82,5 +88,10 @@ public class BoidPropertiesHelper : MonoBehaviour
                 MassValueChanged(slider.value);
             }
         }
+
+        var toggle = FindObjectsByType<Toggle>(FindObjectsSortMode.None)
+            .FirstOrDefault();
+
+        ShowForces(toggle.isOn);
     }
 }
