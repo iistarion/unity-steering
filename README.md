@@ -67,7 +67,7 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-This project is a simple Unity project that demonstrates how to implement **steering behaviours** in C#. You can use it as a reference for your own projects or as a learning resource. The behaviours implemented are:
+This is a simple Unity project that demonstrates how to implement **steering behaviours** in C#. You can use it as a reference for your own projects or as a learning resource. The behaviours implemented are:
   - **Seek:** The agent will move towards a target position.
   - **Arrive:** The agent will slow down as it approaches a target position.
   - **Flee:** The agent will move away from a target position.
