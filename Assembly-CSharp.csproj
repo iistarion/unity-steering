@@ -64,12 +64,13 @@
     <Compile Include="Assets\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Behaviours\ArriveBehaviour.cs" />
     <Compile Include="Assets\Scripts\ReadmeSO.cs" />
+    <Compile Include="Assets\Scripts\BehaviourPropertiesHelper.cs" />
     <Compile Include="Assets\Scripts\Behaviours\PursueBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\ISteeringBehaviour.cs" />
     <Compile Include="Assets\Scripts\MouseDrag.cs" />
     <Compile Include="Assets\Scripts\Behaviours\EvadeBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviours\SeekBehaviour.cs" />
     <Compile Include="Assets\Scripts\Boid.cs" />
+    <Compile Include="Assets\Scripts\Behaviours\SteeringBehaviour.cs" />
     <Compile Include="Assets\Scripts\SelectScene.cs" />
     <Compile Include="Assets\Scripts\BoidPropertiesHelper.cs" />
     <Compile Include="Assets\Scripts\ScenesDescription.cs" />

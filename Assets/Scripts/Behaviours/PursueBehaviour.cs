@@ -1,22 +1,13 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Boid))]    
-public class PursueBehaviour : MonoBehaviour, ISteeringBehaviour
+public class PursueBehaviour : SteeringBehaviour
 {
     public Vector3 RotationOffset;
     public Boid Target;
     public GameObject DebugInterception;
-
-    [SerializeField]
-    private bool _showDebugInterception;
-    [SerializeField]
-    private float _timeInAdvance = 0.2f;
-    private Boid _boid;
-
-    private void Awake()
-    {
-        _boid = GetComponent<Boid>();
-    }
+    public float TimeInAdvance = 0.2f;
+    public bool ShowDebugInterception;
 
     private void FixedUpdate()
     {
@@ -24,9 +15,9 @@ public class PursueBehaviour : MonoBehaviour, ISteeringBehaviour
         DrawInterception();
     }
 
-    public void Steer(Boid boid)
+    override public void Steer(Boid boid)
     {
-        var futurePosition = Target.transform.position + Target.Velocity * _timeInAdvance;
+        var futurePosition = Target.transform.position + Target.Velocity * TimeInAdvance;
         var desiredVelocity = (futurePosition - boid.transform.position).normalized;
         desiredVelocity *= boid.MaxVelocity;
         var steering = desiredVelocity - boid.Velocity;
@@ -41,10 +32,7 @@ public class PursueBehaviour : MonoBehaviour, ISteeringBehaviour
 
     public void DrawInterception()
     {
-        if (!_showDebugInterception)
-            return;
-
-        DebugInterception.SetActive(true);
-        DebugInterception.transform.position = Target.transform.position + Target.Velocity * _timeInAdvance;
+        DebugInterception.SetActive(ShowDebugInterception);
+        DebugInterception.transform.position = Target.transform.position + Target.Velocity * TimeInAdvance;
     }
 }

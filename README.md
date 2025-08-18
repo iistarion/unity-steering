@@ -135,8 +135,8 @@ Unity 6.0 LTS installed on your computer.
 ## Code
 
 The code is very straightforward, there are 4 main things:
-- **ISteeringBehaviour.cs**: Interface for steering behaviours.
-- ***Behaviour.cs**: Each steering behaviour in a separate class (Flee, Arrive, Flee, Pursue, Evade).
+- **SteeringBehaviour.cs**: Base class for steering behaviours.
+- ***Behaviour.cs**: Each steering behaviour implementation in a separate class (Flee, Arrive, Flee, Pursue, Evade).
 - **Boid.cs**: The main script that handles the agent's movement and rotation.
 - The rest of the scripts are for UI and helper functions, like drag and drop, readme, descriptions, etc.
  

@@ -2,25 +2,19 @@ using UnityEngine;
 using UnityEngine.WSA;
 
 [RequireComponent(typeof(Boid))]    
-public class ArriveBehaviour : MonoBehaviour, ISteeringBehaviour
+public class ArriveBehaviour : SteeringBehaviour
 {
     public Vector3 RotationOffset;
     public Transform Target;
     public float ArrivalRadius = 2f;
     public float StopRadius = 1e-4f;
-    private Boid _boid;
-
-    private void Awake()
-    {
-        _boid = GetComponent<Boid>();
-    }
 
     private void FixedUpdate()
     {
         Steer(_boid);
     }
 
-    public void Steer(Boid boid)
+    override public void Steer(Boid boid)
     {
         // Velocity to go to the target
         var desiredVelocity = (Target.position - boid.transform.position);

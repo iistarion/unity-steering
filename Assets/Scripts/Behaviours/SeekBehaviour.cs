@@ -1,23 +1,17 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Boid))]    
-public class SeekBehaviour : MonoBehaviour, ISteeringBehaviour
+public class SeekBehaviour : SteeringBehaviour
 {
     public Vector3 RotationOffset;
     public Transform Target;
-    private Boid _boid;
-
-    private void Awake()
-    {
-        _boid = GetComponent<Boid>();
-    }
 
     private void FixedUpdate()
     {
         Steer(_boid);
     }
 
-    public void Steer(Boid boid)
+    override public void Steer(Boid boid)
     {
         // Velocity to go to the target
         var desiredVelocity = (Target.position - boid.transform.position).normalized;
