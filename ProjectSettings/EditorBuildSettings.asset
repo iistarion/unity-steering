@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LunarPaw.Steering/Demo/Scenes 1/START_HERE.unity
+    path: Assets/LunarPaw.Steering/Demo/Scenes/START_HERE.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/LunarPaw.Steering/Demo/Scenes 1/Seek.unity
+    path: Assets/LunarPaw.Steering/Demo/Scenes/Seek.unity
     guid: e674e9b0fbb525a4c986ec9bda51c12c
   - enabled: 1
-    path: Assets/LunarPaw.Steering/Demo/Scenes 1/Arrive.unity
+    path: Assets/LunarPaw.Steering/Demo/Scenes/Arrive.unity
     guid: 7031f45a1555c6b4e974af1b356da7d1
   - enabled: 1
-    path: Assets/LunarPaw.Steering/Demo/Scenes 1/Evade.unity
+    path: Assets/LunarPaw.Steering/Demo/Scenes/Evade.unity
     guid: 953d22850e1884f4db71429f27359c7f
   - enabled: 1
-    path: Assets/LunarPaw.Steering/Demo/Scenes 1/Flee.unity
+    path: Assets/LunarPaw.Steering/Demo/Scenes/Flee.unity
     guid: 72871ce926bb8d640865dff55f9b0308
   - enabled: 1
-    path: Assets/LunarPaw.Steering/Demo/Scenes 1/Pursue.unity
+    path: Assets/LunarPaw.Steering/Demo/Scenes/Pursue.unity
     guid: 993dbff7867e18842ae3e5eabbae18f9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
