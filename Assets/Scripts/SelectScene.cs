@@ -13,6 +13,7 @@ public class SelectScene : MonoBehaviour
     private string _currentScene;
     private TMP_Dropdown _sceneDropdown;
     private BoidPropertiesHelper _boidProperties;
+    private BehaviourPropertiesHelper _behaviourPropertiesHelper;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class SelectScene : MonoBehaviour
                 UnloadScene(scene.name);
         }
         _boidProperties = FindObjectsByType<BoidPropertiesHelper>(FindObjectsSortMode.None).FirstOrDefault();
+        _behaviourPropertiesHelper = FindObjectsByType<BehaviourPropertiesHelper>(FindObjectsSortMode.None).FirstOrDefault();
     }
 
     private void Start()
@@ -46,6 +48,8 @@ public class SelectScene : MonoBehaviour
         _sceneDescription.SetText(_sceneDescriptions.SceneDescriptions[_currentScene]);
         if (_boidProperties != null)
             _boidProperties.StartCoroutine("DelayApplyCurrentValues");
+        if (_behaviourPropertiesHelper != null)
+            _behaviourPropertiesHelper.StartCoroutine("DelayApplyCurrentValues", _currentScene);
     }
 
     private void UnloadScene(string sceneName)

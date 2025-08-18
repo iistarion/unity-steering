@@ -71,7 +71,7 @@ public class BoidPropertiesHelper : MonoBehaviour
 
     public void ApplyCurrentValues()
     {
-        var sliders = FindObjectsByType<Slider>(FindObjectsSortMode.None);
+        var sliders = GetComponentsInChildren<Slider>();
 
         foreach (var slider in sliders)
         {
@@ -89,9 +89,10 @@ public class BoidPropertiesHelper : MonoBehaviour
             }
         }
 
-        var toggle = FindObjectsByType<Toggle>(FindObjectsSortMode.None)
+        var toggle = GetComponentsInChildren<Toggle>()
             .FirstOrDefault();
 
-        ShowForces(toggle.isOn);
+        if (toggle != null)
+            ShowForces(toggle.isOn);
     }
 }

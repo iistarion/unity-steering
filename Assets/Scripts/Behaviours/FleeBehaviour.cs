@@ -1,23 +1,16 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Boid))]    
-public class FleeBehaviour : MonoBehaviour, ISteeringBehaviour
+public class FleeBehaviour : SteeringBehaviour
 {
     public Vector3 RotationOffset;
     public Transform Target;
-    private Boid _boid;
-
-    private void Awake()
-    {
-        _boid = GetComponent<Boid>();
-    }
 
     private void FixedUpdate()
     {
         Steer(_boid);
     }
 
-    public void Steer(Boid boid)
+    public override void Steer(Boid boid)
     {
         // Velocity to go to the target
         var desiredVelocity = (boid.transform.position - Target.position).normalized;
@@ -34,5 +27,10 @@ public class FleeBehaviour : MonoBehaviour, ISteeringBehaviour
         boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
         
         boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        _boid.transform.position = Vector3.zero;
     }
 }

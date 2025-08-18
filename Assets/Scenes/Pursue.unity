@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 2019552353}
   - component: {fileID: 2019552358}
   - component: {fileID: 2019552359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boid (Arrive)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,8 +812,8 @@ MonoBehaviour:
   RotationOffset: {x: 90, y: 0, z: 0}
   Target: {fileID: 2019552354}
   DebugInterception: {fileID: 2072793671}
-  _showDebugInterception: 1
-  _timeInAdvance: 0.2
+  TimeInAdvance: 0.2
+  ShowDebugInterception: 0
 --- !u!54 &2079399686
 Rigidbody:
   m_ObjectHideFlags: 0
