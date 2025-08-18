@@ -22,7 +22,6 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             var desiredVelocity = (Target.position - boid.transform.position);
             var distance = desiredVelocity.magnitude;
 
-            float targetSpeed = boid.MaxVelocity * Mathf.Clamp01(distance / ArrivalRadius);
             if (distance > ArrivalRadius)
             {
                 // If the target is far away, go at max speed
@@ -47,9 +46,11 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             steering = Vector3.ClampMagnitude(steering, boid.MaxForce);
             steering /= boid.Mass;
 
+            // Apply acceleration to current velocity
             boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.fixedDeltaTime, boid.MaxVelocity);
-            boid.transform.position += boid.Velocity * Time.fixedDeltaTime;
 
+            // Update position and rotation
+            boid.transform.position += boid.Velocity * Time.fixedDeltaTime;
             boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
         }
     }

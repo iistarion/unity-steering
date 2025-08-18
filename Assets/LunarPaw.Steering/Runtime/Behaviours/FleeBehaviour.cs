@@ -26,9 +26,11 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             steering = Vector3.ClampMagnitude(steering, boid.MaxForce);
             steering /= boid.Mass;
 
+            // Apply acceleration to current velocity
             boid.Velocity = Vector3.ClampMagnitude(boid.Velocity + steering * Time.deltaTime, boid.MaxVelocity);
-            boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
 
+            // Update position and rotation
+            boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
             boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
         }
 
