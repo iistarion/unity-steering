@@ -2,7 +2,7 @@
 
 namespace LunarPaw.Steering.Runtime.Agents
 {
-    public class Boid : MonoBehaviour
+    public class SteeringAgent : MonoBehaviour
     {
         public Vector3 Velocity;
         public bool ShowForces;
@@ -16,8 +16,8 @@ namespace LunarPaw.Steering.Runtime.Agents
             _lineRenderer = GetComponent<LineRenderer>();
             if (_lineRenderer == null)
                 _lineRenderer = gameObject.AddComponent<LineRenderer>();
-            _lineRenderer.startWidth = 0.1f;
-            _lineRenderer.endWidth = 0.1f;
+            _lineRenderer.startWidth = 0.05f;
+            _lineRenderer.endWidth = 0.05f;
             _lineRenderer.positionCount = 2;
             Velocity = Vector3.zero;
         }

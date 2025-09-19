@@ -1,30 +1,23 @@
 using LunarPaw.Steering.Runtime.Agents;
 using UnityEngine;
 
-namespace LunarPaw.Steering.Runtime.Behaviours
+namespace LunarPaw.Steering.Runtime.Behaviours.Steering
 {
-    [RequireComponent(typeof(Boid))]
-    public class EvadeBehaviour : SteeringBehaviour
+    [RequireComponent(typeof(SteeringAgent))]
+    public class SeekBehaviour : SteeringBehaviour
     {
         public Vector3 RotationOffset;
-        public Boid Target;
-        public GameObject DebugInterception;
-        public float TimeInAdvance = 0.2f;
-        public bool ShowDebugInterception;
+        public Transform Target;
 
         private void FixedUpdate()
         {
             Steer(_boid);
-            DrawInterception();
         }
 
-        override public void Steer(Boid boid)
+        override public void Steer(SteeringAgent boid)
         {
-            // Future position of target in TimeInAdvance seconds with the current Target.velocity
-            var futurePosition = Target.transform.position + Target.Velocity * TimeInAdvance;
-
             // Velocity to go to the target
-            var desiredVelocity = (boid.transform.position - futurePosition).normalized;
+            var desiredVelocity = (Target.position - boid.transform.position).normalized;
             desiredVelocity *= boid.MaxVelocity;
 
             // Velocity to smoothly steer towards the target
@@ -40,17 +33,6 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             // Update position and rotation
             boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
             boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
-        }
-
-        public void DrawInterception()
-        {
-            DebugInterception.SetActive(ShowDebugInterception);
-            DebugInterception.transform.position = Target.transform.position + Target.Velocity * TimeInAdvance;
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            _boid.transform.position = Vector3.zero;
         }
     }
 }

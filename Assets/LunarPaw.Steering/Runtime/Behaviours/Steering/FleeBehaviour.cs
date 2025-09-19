@@ -1,10 +1,9 @@
 using LunarPaw.Steering.Runtime.Agents;
 using UnityEngine;
 
-namespace LunarPaw.Steering.Runtime.Behaviours
+namespace LunarPaw.Steering.Runtime.Behaviours.Steering
 {
-    [RequireComponent(typeof(Boid))]
-    public class SeekBehaviour : SteeringBehaviour
+    public class FleeBehaviour : SteeringBehaviour
     {
         public Vector3 RotationOffset;
         public Transform Target;
@@ -14,10 +13,10 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             Steer(_boid);
         }
 
-        override public void Steer(Boid boid)
+        public override void Steer(SteeringAgent boid)
         {
             // Velocity to go to the target
-            var desiredVelocity = (Target.position - boid.transform.position).normalized;
+            var desiredVelocity = (boid.transform.position - Target.position).normalized;
             desiredVelocity *= boid.MaxVelocity;
 
             // Velocity to smoothly steer towards the target
@@ -33,6 +32,11 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             // Update position and rotation
             boid.transform.position = boid.transform.position + boid.Velocity * Time.deltaTime;
             boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            _boid.transform.localPosition = Vector3.zero;
         }
     }
 }

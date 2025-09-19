@@ -1,13 +1,13 @@
 using LunarPaw.Steering.Runtime.Agents;
 using UnityEngine;
 
-namespace LunarPaw.Steering.Runtime.Behaviours
+namespace LunarPaw.Steering.Runtime.Behaviours.Steering
 {
-    [RequireComponent(typeof(Boid))]
-    public class PursueBehaviour : SteeringBehaviour
+    [RequireComponent(typeof(SteeringAgent))]
+    public class EvadeBehaviour : SteeringBehaviour
     {
         public Vector3 RotationOffset;
-        public Boid Target;
+        public SteeringAgent Target;
         public GameObject DebugInterception;
         public float TimeInAdvance = 0.2f;
         public bool ShowDebugInterception;
@@ -18,11 +18,13 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             DrawInterception();
         }
 
-        override public void Steer(Boid boid)
+        override public void Steer(SteeringAgent boid)
         {
-            // Velocity to go to the target
+            // Future position of target in TimeInAdvance seconds with the current Target.velocity
             var futurePosition = Target.transform.position + Target.Velocity * TimeInAdvance;
-            var desiredVelocity = (futurePosition - boid.transform.position).normalized;
+
+            // Velocity to go to the target
+            var desiredVelocity = (boid.transform.position - futurePosition).normalized;
             desiredVelocity *= boid.MaxVelocity;
 
             // Velocity to smoothly steer towards the target
@@ -44,6 +46,11 @@ namespace LunarPaw.Steering.Runtime.Behaviours
         {
             DebugInterception.SetActive(ShowDebugInterception);
             DebugInterception.transform.position = Target.transform.position + Target.Velocity * TimeInAdvance;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            _boid.transform.localPosition = Vector3.zero;
         }
     }
 }

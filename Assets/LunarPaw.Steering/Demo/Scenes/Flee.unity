@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 58729375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1235281418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7348ce444825924aa57b6aefabeaa48, type: 3}
+  m_Script: {fileID: 11500000, guid: 50061416ebc6c9f459695d6d50ce34e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
@@ -516,8 +516,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.0036506653
+        value: 0.07692337
         inSlope: 0
         outSlope: 0
         tangentMode: 0

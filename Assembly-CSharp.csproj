@@ -61,17 +61,21 @@
     <Analyzer Include="D:\Programs\Unity\6000.0.31f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\SteeringBehaviour.cs" />
-    <Compile Include="Assets\LunarPaw.Steering\Runtime\Agents\Boid.cs" />
-    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\FleeBehaviour.cs" />
-    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\ArriveBehaviour.cs" />
-    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\PursueBehaviour.cs" />
-    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\SeekBehaviour.cs" />
-    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\EvadeBehaviour.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\UI\FlockingPropertiesHelper.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\EvadeBehaviour.cs" />
+    <Compile Include="Assets\RadiusRenderer.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Flocking\FlockingController.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\PursueBehaviour.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\ArriveBehaviour.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\SeekBehaviour.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\UI\SteeringPropertiesHelper.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Agents\FlockingAgent.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\FleeBehaviour.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Agents\SteeringAgent.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Controls\MouseDrag.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\UI\BoidPropertiesHelper.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\SteeringBehaviour.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\Scenes\ScenesDescription.cs" />
-    <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\UI\BehaviourPropertiesHelper.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\Scenes\SelectScene.cs" />
   </ItemGroup>
   <ItemGroup>

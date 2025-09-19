@@ -19,9 +19,9 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
             ApplyCurrentValues();
         }
 
-        public Boid[] GetAllBoids()
+        public SteeringAgent[] GetAllBoids()
         {
-            return FindObjectsByType<Boid>(FindObjectsSortMode.None);
+            return FindObjectsByType<SteeringAgent>(FindObjectsSortMode.None);
         }
 
         private TMP_Text GetTextMeshPro(string asd)
