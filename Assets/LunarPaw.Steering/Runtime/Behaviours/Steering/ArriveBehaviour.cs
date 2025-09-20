@@ -51,7 +51,9 @@ namespace LunarPaw.Steering.Runtime.Behaviours.Steering
 
             // Update position and rotation
             boid.transform.position += boid.Velocity * Time.fixedDeltaTime;
-            boid.transform.rotation = Quaternion.LookRotation(boid.Velocity.normalized, Vector3.up) * Quaternion.Euler(RotationOffset);
+            var normalizedVel = boid.Velocity.normalized;
+            if (normalizedVel.magnitude != 0)
+                boid.transform.rotation = Quaternion.LookRotation(normalizedVel, Vector3.up) * Quaternion.Euler(RotationOffset);
         }
     }
 }
