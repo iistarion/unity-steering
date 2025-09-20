@@ -2,19 +2,19 @@
 using System;
 using UnityEngine;
 
-namespace LunarPaw.Steering.Runtime.Behaviours
+namespace LunarPaw.Steering.Runtime.Behaviours.Steering
 {
-    [RequireComponent(typeof(Boid))]
+    [RequireComponent(typeof(SteeringAgent))]
     public class SteeringBehaviour : MonoBehaviour
     {
-        protected Boid _boid;
+        protected SteeringAgent _boid;
 
         private void Awake()
         {
-            _boid = GetComponent<Boid>();
+            _boid = GetComponent<SteeringAgent>();
         }
 
-        virtual public void Steer(Boid boid)
+        virtual public void Steer(SteeringAgent boid)
         {
             throw new NotImplementedException("Steer method must be implemented in derived classes.");
         }

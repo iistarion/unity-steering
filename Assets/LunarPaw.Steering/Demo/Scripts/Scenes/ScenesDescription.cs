@@ -13,6 +13,7 @@ namespace LunarPaw.Steering.Runtime.Demo.Scenes
             { "Flee", "Demonstrates how boids can flee from a target." },
             { "Evade", "Shows how boids can evade a target." },
             { "Pursue", "Demonstrates how boids can pursue a target." },
+            { "Flocking", "Demonstrates multiple boids with a flocking behaviour." },
         };
     }
 }

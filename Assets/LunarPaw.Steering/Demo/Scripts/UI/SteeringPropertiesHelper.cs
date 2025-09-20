@@ -1,4 +1,4 @@
-using LunarPaw.Steering.Runtime.Behaviours;
+using LunarPaw.Steering.Runtime.Behaviours.Steering;
 using System;
 using System.Collections;
 using System.Linq;
@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace LunarPaw.Steering.Runtime.Demo.UI
 {
-    public class BehaviourPropertiesHelper : MonoBehaviour
+    public class SteeringPropertiesHelper : MonoBehaviour
     {
         public string SimulateTimeText = "Simulate {0} seconds";
         public string ArrivalRadiusText = "Arrival radius {0}";
@@ -185,6 +185,8 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
                     StopRadius.SetActive(false);
                     TogglePrediction.SetActive(true);
                     NoPropertiesDescription.SetActive(false);
+                    break;
+                case "Flocking":
                     break;
                 default:
                     Debug.LogWarning($"Unsupported scene: {currentScene}");

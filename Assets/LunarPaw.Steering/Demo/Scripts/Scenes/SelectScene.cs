@@ -12,10 +12,13 @@ namespace LunarPaw.Steering.Runtime.Demo.Scenes
         private ScenesDescription _sceneDescriptions;
         [SerializeField]
         private TMP_Text _sceneDescription;
+
+        private FlockingPropertiesHelper _flockingProperties;
+        private BoidPropertiesHelper _boidProperties;
+        private SteeringPropertiesHelper _steeringPropertiesHelper;
+
         private string _currentScene;
         private TMP_Dropdown _sceneDropdown;
-        private BoidPropertiesHelper _boidProperties;
-        private BehaviourPropertiesHelper _behaviourPropertiesHelper;
 
         private void Awake()
         {
@@ -27,7 +30,8 @@ namespace LunarPaw.Steering.Runtime.Demo.Scenes
                     UnloadScene(scene.name);
             }
             _boidProperties = FindObjectsByType<BoidPropertiesHelper>(FindObjectsSortMode.None).FirstOrDefault();
-            _behaviourPropertiesHelper = FindObjectsByType<BehaviourPropertiesHelper>(FindObjectsSortMode.None).FirstOrDefault();
+            _steeringPropertiesHelper = FindObjectsByType<SteeringPropertiesHelper>(FindObjectsSortMode.None).FirstOrDefault();
+            _flockingProperties = FindObjectsByType<FlockingPropertiesHelper>(FindObjectsSortMode.None).FirstOrDefault();
         }
 
         private void Start()
@@ -48,10 +52,26 @@ namespace LunarPaw.Steering.Runtime.Demo.Scenes
             SceneManager.LoadScene(dropdownScene, LoadSceneMode.Additive);
             _currentScene = dropdownScene;
             _sceneDescription.SetText(_sceneDescriptions.SceneDescriptions[_currentScene]);
-            if (_boidProperties != null)
-                _boidProperties.StartCoroutine("DelayApplyCurrentValues");
-            if (_behaviourPropertiesHelper != null)
-                _behaviourPropertiesHelper.StartCoroutine("DelayApplyCurrentValues", _currentScene);
+
+            if (_currentScene.ToLower().Contains("flock"))
+            {
+                _flockingProperties.gameObject.SetActive(true);
+                _steeringPropertiesHelper.gameObject.SetActive(false);
+                _boidProperties.gameObject.SetActive(false);
+                if (_flockingProperties != null)
+                    _flockingProperties.StartCoroutine("DelayApplyCurrentValues", _currentScene);
+            }
+            else
+            {
+                _flockingProperties.gameObject.SetActive(false);
+                _steeringPropertiesHelper.gameObject.SetActive(true);
+                _boidProperties.gameObject.SetActive(true);
+
+                if (_boidProperties != null)
+                    _boidProperties.StartCoroutine("DelayApplyCurrentValues");
+                if (_steeringPropertiesHelper != null)
+                    _steeringPropertiesHelper.StartCoroutine("DelayApplyCurrentValues", _currentScene);
+            }
         }
 
         private void UnloadScene(string sceneName)

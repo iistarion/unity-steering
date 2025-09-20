@@ -1,9 +1,9 @@
 using LunarPaw.Steering.Runtime.Agents;
 using UnityEngine;
 
-namespace LunarPaw.Steering.Runtime.Behaviours
+namespace LunarPaw.Steering.Runtime.Behaviours.Steering
 {
-    [RequireComponent(typeof(Boid))]
+    [RequireComponent(typeof(SteeringAgent))]
     public class ArriveBehaviour : SteeringBehaviour
     {
         public Vector3 RotationOffset;
@@ -16,7 +16,7 @@ namespace LunarPaw.Steering.Runtime.Behaviours
             Steer(_boid);
         }
 
-        override public void Steer(Boid boid)
+        override public void Steer(SteeringAgent boid)
         {
             // Velocity to go to the target
             var desiredVelocity = (Target.position - boid.transform.position);

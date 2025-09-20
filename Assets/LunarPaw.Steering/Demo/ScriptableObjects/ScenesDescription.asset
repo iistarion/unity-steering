@@ -19,22 +19,11 @@ MonoBehaviour:
     - Flee
     - Evade
     - Pursue
+    - Flocking
     m_Values:
-    - This scene shows a seek behaviour, which means the capsule will go towards
-      the target at max speed without reducing its velocity.\n\nIf the seeker gets
-      to the target, it will go past it and then go back to it again and again without
-      stopping.
-    - This scene shows an arrive behaviour, which means the capsule will go towards
-      the target at max speed.\n\nIn this behaviour, the arriving object will reduce
-      its velocity linearly once the distance to its objective is less than what
-      we set up.
-    - This scene shows a flee behaviour.\n\nThis will make the fleeing object to
-      just go on the opposite direction from where its target is.
-    - 'This scene shows an evade behaviour.\n\nThis is just the opposite of the pursue
-      behaviour: we simulate the future position of the target we are evading, and
-      go opposite of that future direction.\n\nWe are effectively fleeing from the
-      gray sphere.'
-    - This scene shows a pursue behaviour.\n\nAlthough similar to the seek behaviour,
-      in this case the pursuing object will seek the "future position" of the boid
-      it is following, by simulating the position that the object will be after the
-      seconds we have configured.\n\nWe are effectively seeking the gray sphere.
+    - Demonstrates how boids can seek a target.
+    - Shows how boids can arrive at a target.
+    - Demonstrates how boids can flee from a target.
+    - Shows how boids can evade a target.
+    - Demonstrates how boids can pursue a target.
+    - Demonstrates multiple boids with a flocking behaviour.
