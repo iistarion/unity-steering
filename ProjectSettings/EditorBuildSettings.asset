@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/LunarPaw.Steering/Demo/Scenes/Arrive.unity
     guid: 7031f45a1555c6b4e974af1b356da7d1
   - enabled: 1
+    path: Assets/LunarPaw.Steering/Demo/Scenes/Flocking.unity
+    guid: 307ad216495262a4bb19a6ce11c1d22c
+  - enabled: 1
     path: Assets/LunarPaw.Steering/Demo/Scenes/Evade.unity
     guid: 953d22850e1884f4db71429f27359c7f
   - enabled: 1

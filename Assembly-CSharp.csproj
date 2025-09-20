@@ -67,6 +67,7 @@
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Flocking\FlockingController.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\PursueBehaviour.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\ArriveBehaviour.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Common\HelperFuncs.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\SeekBehaviour.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\UI\SteeringPropertiesHelper.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Agents\FlockingAgent.cs" />

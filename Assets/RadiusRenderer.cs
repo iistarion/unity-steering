@@ -18,6 +18,7 @@ public class RadiusRenderer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _radiusRenderer.enabled = _flockingController.ShowRadius;
         if (_flockingController.ShowRadius)
             DrawRadius(transform.position);
     }

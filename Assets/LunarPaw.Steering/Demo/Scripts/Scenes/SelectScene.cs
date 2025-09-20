@@ -58,8 +58,8 @@ namespace LunarPaw.Steering.Runtime.Demo.Scenes
                 _flockingProperties.gameObject.SetActive(true);
                 _steeringPropertiesHelper.gameObject.SetActive(false);
                 _boidProperties.gameObject.SetActive(false);
-                if (_flockingProperties != null)
-                    _flockingProperties.StartCoroutine("DelayApplyCurrentValues", _currentScene);
+
+                _flockingProperties.StartCoroutine("DelayApplyCurrentValues", _currentScene);
             }
             else
             {
@@ -67,10 +67,8 @@ namespace LunarPaw.Steering.Runtime.Demo.Scenes
                 _steeringPropertiesHelper.gameObject.SetActive(true);
                 _boidProperties.gameObject.SetActive(true);
 
-                if (_boidProperties != null)
-                    _boidProperties.StartCoroutine("DelayApplyCurrentValues");
-                if (_steeringPropertiesHelper != null)
-                    _steeringPropertiesHelper.StartCoroutine("DelayApplyCurrentValues", _currentScene);
+                _steeringPropertiesHelper.StartCoroutine("DelayApplyCurrentValues", _currentScene);
+                _boidProperties.StartCoroutine("DelayApplyCurrentValues", _currentScene);
             }
         }
 

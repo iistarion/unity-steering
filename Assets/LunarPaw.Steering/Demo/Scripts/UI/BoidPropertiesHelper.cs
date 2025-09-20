@@ -1,3 +1,4 @@
+using Assets.LunarPaw.Steering.Runtime.Common;
 using LunarPaw.Steering.Runtime.Agents;
 using System;
 using System.Collections;
@@ -24,18 +25,12 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
             return FindObjectsByType<SteeringAgent>(FindObjectsSortMode.None);
         }
 
-        private TMP_Text GetTextMeshPro(string asd)
-        {
-            return GetComponentsInChildren<TMP_Text>().Where(ch => ch.name.Contains(asd,
-                StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-        }
-
         public void MaxVelocityValueChanged(Single value)
         {
             foreach (var boid in GetAllBoids())
                 boid.MaxVelocity = value;
 
-            var text = GetTextMeshPro("velocity");
+            var text = gameObject.GetTextMeshPro("velocity");
             if (text != null)
                 text.SetText(MaxVelocityText, value);
         }
@@ -45,7 +40,7 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
             foreach (var boid in GetAllBoids())
                 boid.MaxForce = value;
 
-            var text = GetTextMeshPro("force");
+            var text = gameObject.GetTextMeshPro("max force");
             if (text != null)
                 text.SetText(MaxForceText, value);
         }
@@ -55,7 +50,7 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
             foreach (var boid in GetAllBoids())
                 boid.Mass = value;
 
-            var text = GetTextMeshPro("mass");
+            var text = gameObject.GetTextMeshPro("mass");
             if (text != null)
                 text.SetText(MassText, value);
         }
@@ -66,7 +61,7 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
                 boid.ShowForces = value;
         }
 
-        public IEnumerator DelayApplyCurrentValues()
+        public IEnumerator DelayApplyCurrentValues(string currentScene)
         {
             yield return new WaitForSeconds(0.1f);
             ApplyCurrentValues();
@@ -78,15 +73,15 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
 
             foreach (var slider in sliders)
             {
-                if (slider.name.Contains("velocity", StringComparison.InvariantCultureIgnoreCase))
+                if (slider.name.ToLower().Contains("velocity"))
                 {
                     MaxVelocityValueChanged(slider.value);
                 }
-                else if (slider.name.Contains("force", StringComparison.InvariantCultureIgnoreCase))
+                else if (slider.name.ToLower().Contains("force"))
                 {
                     MaxForceValueChanged(slider.value);
                 }
-                else if (slider.name.Contains("mass", StringComparison.InvariantCultureIgnoreCase))
+                else if (slider.name.ToLower().Contains("mass"))
                 {
                     MassValueChanged(slider.value);
                 }
