@@ -11802,15 +11802,12 @@ MonoBehaviour:
   m_text: 'Red sphere: target of the seek/arrive behaviours.You can move them around
     by drag&drop.
 
-    
 
-    Green capsule: agent that seeks/arrives at the red
-    spheres.
+    Green capsule: agent that seeks/arrives at the red spheres.
 
-    
 
-    Blue capsule: agent that evades/pursues/flees from the
-    green capsules.'
+    Blue
+    capsule: agent that evades/pursues/flees from the green capsules.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
