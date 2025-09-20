@@ -1,3 +1,4 @@
+using Assets.LunarPaw.Steering.Runtime.Common;
 using LunarPaw.Steering.Runtime.Behaviours.Steering;
 using System;
 using System.Collections;
@@ -30,12 +31,6 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
             return FindObjectsByType<SteeringBehaviour>(FindObjectsSortMode.None);
         }
 
-        private TMP_Text GetTextMeshPro(string name)
-        {
-            return GetComponentsInChildren<TMP_Text>().Where(ch => ch.name.Contains(name,
-                StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
-        }
-
         public void SimulateTimeChanged(Single value)
         {
             foreach (var steeringBehaviour in GetAllBehaviours())
@@ -60,7 +55,7 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
                 }
             }
 
-            var text = GetTextMeshPro("simulate");
+            var text = gameObject.GetTextMeshPro("simulate");
             if (text != null)
                 text.SetText(SimulateTimeText, value);
         }
@@ -88,7 +83,7 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
                 }
             }
 
-            var text = GetTextMeshPro("arrival");
+            var text = gameObject.GetTextMeshPro("arrival");
             if (text != null)
                 text.SetText(ArrivalRadiusText, value);
         }
@@ -116,7 +111,7 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
                 }
             }
 
-            var text = GetTextMeshPro("stop");
+            var text = gameObject.GetTextMeshPro("stop");
             if (text != null)
                 text.SetText(StopRadiusText, value);
         }
@@ -204,15 +199,15 @@ namespace LunarPaw.Steering.Runtime.Demo.UI
                 if (!slider.IsActive())
                     continue;
 
-                if (slider.name.Contains("simulate", StringComparison.InvariantCultureIgnoreCase))
+                if (slider.name.ToLower().Contains("simulate"))
                 {
                     SimulateTimeChanged(slider.value);
                 }
-                else if (slider.name.Contains("arrival", StringComparison.InvariantCultureIgnoreCase))
+                else if (slider.name.ToLower().Contains("arrival"))
                 {
                     ArrivalRadiusChanged(slider.value);
                 }
-                else if (slider.name.Contains("stop", StringComparison.InvariantCultureIgnoreCase))
+                else if (slider.name.ToLower().Contains("stop"))
                 {
                     StopRadiusChanged(slider.value);
                 }
