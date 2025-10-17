@@ -63,8 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\UI\FlockingPropertiesHelper.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\EvadeBehaviour.cs" />
-    <Compile Include="Assets\RadiusRenderer.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Flocking\FlockingController.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Common\RadiusRenderer.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\PursueBehaviour.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\ArriveBehaviour.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Common\HelperFuncs.cs" />
@@ -73,6 +73,7 @@
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Agents\FlockingAgent.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\FleeBehaviour.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Agents\SteeringAgent.cs" />
+    <Compile Include="Assets\LunarPaw.Steering\Runtime\Common\RemoveWebGLKeyboardListener.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Controls\MouseDrag.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Demo\Scripts\UI\BoidPropertiesHelper.cs" />
     <Compile Include="Assets\LunarPaw.Steering\Runtime\Behaviours\Steering\SteeringBehaviour.cs" />
